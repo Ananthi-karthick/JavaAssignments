@@ -16,8 +16,7 @@ public class NestedConditional
 		if (weight<40.0) {
 			System.out.println(" UnderWeight.."); 
 		}
-		else  {
-			if (weight>=40.0 && weight <= 60.0 )  {
+		else  if (weight>=40.0 && weight <= 60.0 )  {
 				System.out.println("Normal Weight... ");
 				
 			}
@@ -30,4 +29,4 @@ public class NestedConditional
 			
 	}
 	
-}
+
