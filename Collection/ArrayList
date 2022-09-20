@@ -1,0 +1,61 @@
+package arraylist;
+
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ArrayList;//arrayList class from collection interface
+import java.util.Scanner;
+
+public class arrayList {
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		List<Integer> al = new ArrayList<Integer>();// default capacity=10
+		System.out.println("enter elements:");
+		for (int i = 0; i < 6; i++) {
+			al.add(in.nextInt());// adding individual elements into list
+		}
+		System.out.println("ArrayList:" + al);// even the size is default,but the no.of elements 5,thats the size of
+												// list
+		// for (int num : al)// printing individual element of list
+		// System.out.println(num);
+		/*
+		 * System.out.println(al.get(2)); System.out.println(al.remove(3));
+		 * System.out.println(al); System.out.println(al.isEmpty());
+		 * System.out.println(al.size());
+		 */
+		al.add(7);
+		System.out.println("ArrayList:" + al);
+		System.out.println("enter element:");
+		al.add(in.nextInt());
+		al.add(5, 8);
+		System.out.println("ArrayList:" + al);
+		System.out.println("returned element:" + al.get(1));
+		al.set(4, 47);
+		System.out.println("ArrayList:" + al);
+		Iterator itr = al.iterator();// getting the Iterator
+		System.out.println("iteration using iterator:");
+		while (itr.hasNext()) {// check if iterator has the elements
+			System.out.println(itr.next());// printing the element and move to next
+		}
+		Collections.sort(al); // if any element is null compiler will generate
+								// "java.lang.NullPointerException" Cannot invoke
+								// "java.lang.Comparable.compareTo(Object)" because "a[runHi]" is null
+		System.out.println("Sorted ArrayList:" + al);
+		/*
+		 * ListIterator<String> list1=al.listIterator(al.size());
+		 * while(list1.hasPrevious()) { String number=al.previous();
+		 * System.out.println(number); }
+		 */
+		System.out.println("iteration using for each()method:");
+		al.forEach(a->{ //Here, we are using lambda expression  
+            System.out.println(a);  
+          }); 
+		  
+		/*
+		 * al.clear(); System.out.println("ArrayList:" + al); List l=new
+		 * ArrayList();//creating another arraylist l.addAll(al);//adding all the
+		 * elements of "al" list to "l" list System.out.println("New List:"+l);
+		 */
+	}
+
+}
