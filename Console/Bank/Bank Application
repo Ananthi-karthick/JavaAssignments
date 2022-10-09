@@ -1,0 +1,22 @@
+package com.consol.app.bank;
+
+import java.sql.*;
+
+
+
+
+public class BankApplication {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException 
+	{
+
+		System.out.println("Welcome to XYZ Bank");
+		System.out.println("*******************");
+		System.out.println();
+		Operations operations = new Operations();
+		operations.mainMenu();
+		
+
+	}
+
+}
