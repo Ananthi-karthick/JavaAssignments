@@ -1,0 +1,9 @@
+package console.employee;
+
+public class EmployeeManagement {
+
+	public static void main(String[] args) {
+		Operations o = new Operations();
+		o.showOptions();
+	}
+}
