@@ -1,0 +1,35 @@
+
+import java.util.*;
+public class Solution {
+    public static void main(String[] args)  {
+        Scanner in=new Scanner(System.in);
+        int pd=0;
+        int sd=0;
+        int diff;
+        int n=in.nextInt();
+        int[][] a=new int[n][n];
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+            a[i][j]=in.nextInt();
+            }
+        }
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                 if(i==j)
+                 pd+=a[i][j];
+                 if((i+j)==(n-1))
+                 sd+=a[i][j];
+            }
+        }
+        
+        diff=sd-pd;
+        System.out.println(Math.abs(diff));
+        
+    }
+}
+
+        
