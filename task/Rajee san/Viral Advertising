@@ -1,0 +1,22 @@
+package day1;
+
+import java.util.Scanner;
+
+public class ViralAdvertising {
+public static void main(String[] args) {
+             int clients = 5;
+        Scanner scanner = new Scanner(System.in); 
+        System.out.println("enter number:");
+            int n = scanner.nextInt();
+            int shared=clients;
+            int liked =0;
+            int cumulative = 0;
+            for (int i = 0; i < n; i++) {
+                liked = shared/2;
+                cumulative += liked;
+                shared =liked* 3;
+            }
+            System.out.println(cumulative);
+        }
+    
+}
