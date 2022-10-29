@@ -28,7 +28,7 @@ public class WeightedUniformStrings {
 			m1.put(i, j);
 			j++;
 		}
-		Map<Character, Integer> m2 = new HashMap<>();
+		Map<Character, Integer> m2 = new HashMap<>();// abcddde
 		for (int i = 0; i < s.length(); i++) {
 			count = 1;
 			for (int k = i + 1; k < s.length(); k++) {
@@ -36,25 +36,28 @@ public class WeightedUniformStrings {
 					count++;
 				}
 			}
-			ans.add(count);
 			m2.put(s.charAt(i), count);
 			s = s.replace(sb.charAt(i), ' ');
 		}
-
+System.out.println(m2);
 		for (Entry<Character, Integer> entry : m1.entrySet()) {
 			for (Entry<Character, Integer> entry1 : m2.entrySet()) {
-				if (entry.getKey() == (entry1.getKey()))
-
-					ans.add((int) entry.getValue() * entry1.getValue());
-
+				if (entry.getKey() == (entry1.getKey())) {
+					int n3=entry1.getValue();
+					
+					while(n3>0) {
+						ans.add(entry.getValue()*n3);
+						n3--;
+					}
+				}
 			}
 			
 		}
 		
-		System.out.println(ans);
-		for(Integer tempList : queries)    
-			output.add(ans.contains(tempList) ? "Yes" : "No");  
-			System.out.println(output);
-		
+
+		for (Integer tempList : queries)
+			output.add(ans.contains(tempList) ? "Yes" : "No");
+		System.out.println(output);
+
 	}
 }
