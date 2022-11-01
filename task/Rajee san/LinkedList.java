@@ -19,7 +19,7 @@ public class SinglyLinkedList {
 	public Node head = null;
 	public Node tail = null;
 
-	public void addNode(int data) { // 2
+	public void addNode(int data) { 
 
 		Node newNode = new Node(data);
 
@@ -67,20 +67,20 @@ public class SinglyLinkedList {
 			j = max.next;
 		}
 		tail.data = 0;
-		display();// 7
+		display();
 	}
 
 	public static void main(String[] args) {
 
 		SinglyLinkedList sList = new SinglyLinkedList();
 
-		// Add nodes to the list
+		
 		sList.addNode(2);
 		sList.addNode(7);
 		sList.addNode(4);
 		sList.addNode(3);
 		sList.addNode(5);
-		// Displays the nodes present in the list
+		
 		sList.display();
 		sList.max();
 	}
