@@ -1,4 +1,4 @@
-package day4;//bubble sort
+package day4;
 
 import java.util.HashSet;
 
