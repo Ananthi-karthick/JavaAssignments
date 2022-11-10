@@ -6,34 +6,33 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-public class FrequencyOfElementsDescending {
+public class FrequencyOfElementsDescending {// 3 3 7 7 3  3 3 3 7 7
 
 	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
+		Scanner input=new Scanner(System.in);
 		System.out.println("Enter the size:");
-		int n=sc.nextInt();
-		int[] a=new int[n];
+		int size=input.nextInt();
+		int[] array=new int[size];
 		System.out.println("Enter the elements:");
-		for(int x=0;x<n;x++)
+		for(int x=0;x<size;x++)
 		{
-			a[x]=sc.nextInt();
+			array[x]=input.nextInt();
 		}
-		Map<Integer,Integer> map=new LinkedHashMap<>();
-		for(int i=0;i<a.length;i++) {
-		 map.put(a[i], map.getOrDefault(a[i],0)+1);
+		Map<Integer,Integer> elementFrequency=new LinkedHashMap<>();
+		for(int i=0;i<array.length;i++) {
+			elementFrequency.put(array[i], elementFrequency.getOrDefault(array[i],0)+1);
 		}
-		List l=new ArrayList();
-		map.entrySet().stream().sorted(Map.Entry.<Integer,Integer>comparingByValue().reversed()).
-		forEach(record->{
-			int k=record.getKey();
-			int value=record.getValue();
-			for(int i=1;i<=value;i++)
+		List sortedArray=new ArrayList();
+		elementFrequency.entrySet().stream().sorted(Map.Entry.<Integer,Integer>comparingByValue().reversed()).
+		forEach(frequencyRecord->{
+			int element=frequencyRecord.getKey();
+			int frequency=frequencyRecord.getValue();
+			for(int i=1;i<=frequency;i++)
 			{
-				l.add(k);
+				sortedArray.add(element);
 			}
 		});
-		System.out.println(l);
-		
+		System.out.println(sortedArray);
 	}
 
 }
