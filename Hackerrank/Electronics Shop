@@ -1,0 +1,35 @@
+import java.io.*;
+import java.math.*;
+import java.text.*;
+import java.util.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int budget = in.nextInt();
+        int keyboard = in.nextInt();
+        int drives = in.nextInt();
+        int[] keyboards = new int[keyboard];
+        for(int keyboards_i=0; keyboards_i < keyboard; keyboards_i++){
+            keyboards[keyboards_i] = in.nextInt();
+        }
+        int[] pendrives = new int[drives];
+        for(int pendrives_i=0; pendrives_i < drives; pendrives_i++){
+            pendrives[pendrives_i] = in.nextInt();
+        }
+        int max=0;
+        for(int i=0;i<keyboard;i++){
+            for(int j=0;j<drives;j++){
+                if(keyboards[i]+pendrives[j]<=budget){
+                  if(max<keyboards[i]+pendrives[j]){
+                      max=keyboards[i]+pendrives[j];
+                  }  
+                }
+            }
+        }
+        System.out.println(max==0?-1:max);
+        
+    }
+}
