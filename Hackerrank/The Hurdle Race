@@ -1,0 +1,24 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int hurdle_height = in.nextInt();
+        int character_height = in.nextInt();
+        int[] height = new int[hurdle_height];
+        int max = 0;
+        for(int height_i=0; height_i < hurdle_height; height_i++){
+            height[height_i] = in.nextInt();
+            max = Math.max(max, height[height_i]);
+        }
+        System.out.println(Math.max(0, max - character_height));
+       
+    }
+}
