@@ -1,0 +1,21 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int pages = in.nextInt();//6
+        int pageturn = in.nextInt();//2
+        int start = pageturn/2;//1
+        int total = pages/2 ;//4
+        int end = total - start ;//4-1-1
+        
+        System.out.println(Math.min(start, end));//1 2
+    }
+}
