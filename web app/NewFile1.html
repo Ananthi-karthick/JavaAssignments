@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body >
+ <div style="font-size:20pt;">Quiz</div>
+             <div class="ques" id="question"> 
+             </div>
+             <div><input type="radio" id="opt1" name="options">
+                <span id="optt1"></span>
+            </div>
+            <div><input type="radio" id="opt2" name="options">
+                <span id="optt2"></span>
+            </div>
+            <div><input type="radio" id="opt3" name="options">
+                <span id="optt3"></span>
+            </div>
+            <div><input type="radio" id="opt4" name="options">
+                <span id="optt4"></span>
+            </div>
+            <div class="lftCss">
+            <button class="nxtBtn" onclick="next()">next</button>
+            </div>
+      
+<script>
+var i=0;
+var obj=[
+	{
+		"option_d": "Architectural Neural",
+		"option_b": "Use of Pointers",
+		"option_c": "Dynamic",
+		"question": "Identify the incorrect Java feature.",
+		"correct_answer": "Use of Pointers",
+		"option_a": "Object Oriented"
+		},
+		{
+		"option_d": "none",
+		"option_b": "java.lang.String",
+		"option_c": "java.lang.util",
+		"question": "In which of the following is toString() method defined?",
+		"correct_answer": "java.lang.Object",
+		"option_a": "java.lang.Object"
+		},
+		{
+		"option_d": "object based",
+		"option_b": "mid level",
+		"option_c": "procedural",
+		"question": "Java is a",
+		"correct_answer": "high level",
+		"option_a": "high level"
+		},
+		{
+		"option_d": "none",
+		"option_b": "at compile time",
+		"option_c": "depends on the code",
+		"question": "When is the object created with new keyword?",
+		"correct_answer": "at runtime",
+		"option_a": "at runtime"
+		},
+		{
+		"option_d": "64 and 32",
+		"option_b": "32 and 32",
+		"option_c": "64 and 64",
+		"question": "What is the size of float and double in java?",
+		"correct_answer": "32 and 64",
+		"option_a": "32 and 64"
+		},
+		{
+		"option_d": "none",
+		"option_b": "void ",
+		"option_c": "double",
+		"question": "Identify the return type of a method that does not return any value.",
+		"correct_answer": "void",
+		"option_a": "int"
+		},
+		{
+		"option_d": "4.0",
+		"option_b": "3.0",
+		"option_c": "4",
+		"question": "Output of Math.floor(3.6)?",
+		"correct_answer": "3",
+		"option_a": "3"
+		},
+		{
+		"option_d": "char[] ch=new char[]",
+		"option_b": "char[] ch=new char[5]",
+		"option_c": "char[] ch=new char()",
+		"question": "Select the valid statement.",
+		"correct_answer": "char[] ch=new char[5]",
+		"option_a": "char[] ch=new char(5)"
+		},
+		{
+		"option_d": "none",
+		"option_b": "Instance variable",
+		"option_c": "reference variable",
+		"question": "What is the variables declared in a class for the use of all methods of the class called?",
+		"correct_answer": "Instance variable",
+		"option_a": "Object"
+		},
+		{
+		"option_d": "copy of first element",
+		"option_b": "A copy of the array",
+		"option_c": "length of the array",
+		"question": "When an array is passed to a method, what does the method receive?",
+		"correct_answer": "The refences of the array",
+		"option_a": "The refences of the array"
+		},
+		{
+		"option_d": "short to int",
+		"option_b": "int to long",
+		"option_c": "long to int",
+		"question": "Automatic type conversion is possible in which of the possible cases?",
+		"correct_answer": "long to int",
+		"option_a": "Byte to int"
+		},
+		{
+		"option_d": "none",
+		"option_b": "object",
+		"option_c": "primitive data type",
+		"question": "Arrays in java are-",
+		"correct_answer": "object",
+		"option_a": "object references"
+		},
+		{
+		"option_d": "Tree",
+		"option_b": "Stack",
+		"option_c": "Array",
+		"question": "Where does the system stores parameters and local variables whenever a method is invoked?",
+		"correct_answer": "Array",
+		"option_a": "Heap"
+		},
+		{
+		"option_d": "static",
+		"option_b": "private",
+		"option_c": "protected",
+		"question": "Identify the modifier which cannot be used for constructor.",
+		"correct_answer": "static",
+		"option_a": "public"
+		},
+		{
+		"option_d": "java.String",
+		"option_b": "java.awt",
+		"option_c": "java.applet",
+		"question": "To which of the following does the class string belong to.",
+		"correct_answer": "java.lang",
+		"option_a": "java.lang"
+		}
+		];
+generate(0);
+function generate(index) {
+    document.getElementById("question").innerHTML = obj[index].question;
+    document.getElementById("optt1").innerHTML = obj[index].option_a;
+    document.getElementById("optt2").innerHTML = obj[index].option_b;
+    document.getElementById("optt3").innerHTML = obj[index].option_c;
+    document.getElementById("optt4").innerHTML = obj[index].option_d;
+   
+}
+  function next() {
+	  i++;
+	  if(i<obj.length){
+	generate(i);
+	  }
+	  else
+		  {
+		  document.write("finished");
+		  
+		  }
+ }
+  </script>
+</body>
+</html>
