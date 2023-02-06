@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+    background-color: #fff ; 
+   
+}
+.qPanel{
+    margin:auto;
+    width:800px;
+    vertical-align: center;
+    margin:0 auto;
+    background-color: #E27D60 ;
+    border: none ;
+    border-radius : 10px ;
+    padding: 20px ;
+    height: 400px ;
+    font-size: 15pt;
+}
+.ques, .questionCount{
+    font-size : 18pt;
+    font-weight: bold ;
+}
+.nxtBtn{
+    position: relative ;
+    right : 10px ;
+    float: right;
+    font-size: 18pt ;
+    background-color: #348322  ;
+    color: #ffffff ;
+    width: 80px ;
+    height: 35px ;
+    border-style: outset;
+    
+}
+.line-1 {
+  height: 1px;
+  background: black;
+}
+.option{
+  width: 700px;
+  border-style:outset;
+  padding: 10px;
+  margin: 20px;
+  background-color: lightgrey;
+}
+
+</style>
+</head>
+<body >
+  <div class="qPanel">
+            <div class="questionCount" id="count"></div>
+            <div class="line-1"></div>
+             <div class="ques" id="questions"> 
+             </div>
+             <div class="option" id="opt1" onclick="getResult(this)">
+            </div>
+            <div class="option" id="opt2" onclick="getResult(this)">
+            </div>
+            <div class="option"  id="opt3" onclick="getResult(this)">  
+            </div>
+            <div class="option"  id="opt4" onclick="getResult(this)" >
+            </div>
+            <div class="lftCss">
+            <button type="button" id="next" class="nxtBtn">next</button>
+            </div>
+        </div>
+<script>
+var obj="";
+var i = 0;
+var correctCount = 0 ;
+var k=1;
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (xmlhttp.readyState == XMLHttpRequest.DONE) {  
+ var jsons=xmlhttp.responseText;
+  obj=JSON.parse(jsons);
+  
+ generate(0);
+ 
+ function generate(index) {
+	 
+	 document.getElementById("count").innerHTML="Question"+" "+k+" of "+obj.length;
+     document.getElementById("questions").innerHTML = obj[index].question;
+     document.getElementById("opt1").innerHTML = obj[index].option_a;
+     document.getElementById("opt2").innerHTML = obj[index].option_b;
+     document.getElementById("opt3").innerHTML = obj[index].option_c;
+     document.getElementById("opt4").innerHTML = obj[index].option_d;
+    k++;
+ }
+
+
+function getResult(element)
+{
+	console.log(element);
+	
+	}
+document.getElementById('next').onclick =()=> 
+{
+	var j=++i;
+	generate(j);
+ }
+ }
+}
+xmlhttp.open("GET", "http://localhost:8081/QuizWebApplication/ExamServlet", true);
+xmlhttp.send();
+</script>
+</body>
+</html>
