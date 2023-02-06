@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>UserLogin</title>
+<style>
+body {
+	background-image:
+		url('https://thumbs.dreamstime.com/b/its-quiz-time-text-wooden-cubes-177037660.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+}
+.user {
+  margin: auto;
+  width: 30%;
+  padding: 50px;
+  opacity:1;
+   background-color: rgba(0, 0, 0, 0.4);
+   margin-top:70px;
+}
+table td{
+font-size:20px;
+padding:20px 20px;
+color: white;
+
+}
+input[type=text],[type=password] {
+  border: 1px solid #333;
+  border-radius: 5px;
+  margin-right:20px 20px;
+  padding:8px 16px ;
+  width: 250px;
+  font-size:16px;
+  
+}
+button {
+margin-top:20px;
+padding: 10px 30px;
+background-color: #00FFFF;
+	cursor: pointer;
+	font-size: 20px;
+	color:black;
+	border-radius: 30px;
+	margin-left:150px;
+}
+</style>
+</head>
+<body>
+	<div class="user">
+		<form action="UserLogin" method="post">
+			<table>
+				<tr>
+					<td><b>User Name</b></td>
+					<td><input type="text" name="username"  required/></td>
+				</tr>
+				<tr>
+					<td><b>Password</b></td>
+					<td><input type="password" name="password" id="password"  required> <input
+						type="checkbox"  id="ShowPassword" /> <label for="Password">Show
+							Password </label></td>
+				</tr>
+			</table>
+			<button type="submit" class="Submit">Submit</button>
+			 <button type="button" onclick="location.href='Index.html'">Cancel</button> 
+		</form>
+	</div>
+	<script>
+		document.getElementById('ShowPassword').onclick = function() {
+			if (this.checked) {
+				document.getElementById('password').type = "text";
+			} else {
+				document.getElementById('password').type = "password";
+			}
+		};
+	</script>
+</body>
+</html>

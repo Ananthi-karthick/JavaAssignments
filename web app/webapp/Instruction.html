@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>UserInstruction</title>
+<link rel="stylesheet" href="Design.css">
+</head>
+<body>
+<div class="container"> 
+<button type="submit" class="btn" onclick="openPopup()">Start Test</button>
+<div class="popup" id="popup">
+<h2>Instructions</h2>
+ <p>1.This quiz has 15 java basic questions.</p>
+ <p>2.You have to solve this within 120 seconds.</p>
+<button type="button" onclick="okPopup()">Ok</button>
+<button type="button" onclick="cancelPopup()">Cancel</button>
+</div>
+</div>
+<script>
+let popup=document.getElementById("popup");
+function openPopup(){
+	popup.classList.add("open-popup");
+	
+}
+function okPopup(){
+	window.location.href = "ExamServlet";
+}
+function cancelPopup(){
+	window.location.href = "UserPanel.html";
+}
+</script>
+
+</body>
+</html>
